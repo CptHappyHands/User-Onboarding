@@ -5,12 +5,14 @@ import { useEffect, useState } from 'react';
 import axios from 'axios'
 import { reach } from 'yup';
 import schema from './components/formSchema'
-import Family from './components/Family';
+import Familys from './components/Familys';
 
 const initialFormValues = {
   username: '',
   email: '',
   termsOfService: false,
+  password: '',
+  // confirmPassword: '',
 }
 
 const initialFormErrors = {
@@ -84,6 +86,7 @@ const validate = (name, value ) => {
   return (
     <div className="container">
         <header><h1>Welcome to the family!</h1></header>
+
         <Form
         values={formValues}
         change={inputChange}
@@ -91,13 +94,13 @@ const validate = (name, value ) => {
         disabled={disabled}
         errors={formErrors}
         />
-    {/* {
-      family.map(fam => {
-        return (
-          <Family key={fam.id} details={fam} />
-        )
-      })
-    } */}
+        {/* {
+          family.map(fam => {
+            return (
+              <Familys key={fam.id} details={fam} />
+            )
+          })
+        } */}
 
     </div>
   )

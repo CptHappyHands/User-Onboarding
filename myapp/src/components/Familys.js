@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Family({details}) {
+function Familys({details}) {
     if (!details) {
         return <h3>....loading</h3>
     }
@@ -15,4 +15,4 @@ function Family({details}) {
     )
 }
 
-export default Family
+export default Familys

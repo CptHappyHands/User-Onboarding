@@ -13,8 +13,10 @@ const schema = yup.object().shape({
         .string()
         .min(6)
         .max(16),
-    termsOfService: yup
+    termsOfService: yup    
         .boolean()
+        .required('The terms must be accepted')
+        .oneOf([true], 'Must be checked')
 })
 
 export default schema

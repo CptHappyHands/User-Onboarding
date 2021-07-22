@@ -43,7 +43,7 @@ export default function FamilyForm(props) {
                     type='text'
                     />
                 </label>
-
+                <br></br>
                 <label>Email
                     <input
                     value={values.email}
@@ -52,27 +52,36 @@ export default function FamilyForm(props) {
                     type='text'
                     />
                 </label>
+                <br></br>
+                <label>Password
+                    <input
+                    value={values.password}
+                    onChange={onChange}
+                    name='password'
+                    type='password'
+                    />
+                </label>
+                {/* <br></br>
+                <label> Confirm Password
+                    <input
+                    value={values.password}
+                    onChange={onChange}
+                    name='confirm-password'
+                    type='password'
+                    />
+                </label> */}
 
             <h4>Do you accept the terms of service?</h4>
                 <label>Yes
                     <input
-                    type='radio'
+                    type='checkbox'
                     name='termsOfService'
-                    value='yes'
+                    value='true'
                     onChange={onChange}
-                    checked={values.termsOfService === 'yes'}
+                    checked={values.termsOfService === 'true'}
                     />
                 </label>
 
-                <label>No
-                    <input
-                     type='radio'
-                     name='termsOfService'
-                     value='no'
-                     onChange={onChange}
-                     checked={values.termsOfService === 'no'}
-                     />
-                </label>
             </div>
 
         </form>
