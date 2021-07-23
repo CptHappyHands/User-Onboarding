@@ -7,7 +7,9 @@ function Familys({details}) {
 
     return (
         <div className='family container'>
-            <h3>{details.username}</h3>
+            {
+              details.first_name ? <h3>{details.first_name}</h3> : <h3>{details.username}</h3>
+            }
             <p>Email: {details.email}</p>
             <p>Terms of Service: {details.termsOfService}</p>
 

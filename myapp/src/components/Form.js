@@ -10,7 +10,7 @@ export default function FamilyForm(props) {
     } = props
 
     const onSubmit = evt => {
-        evt.prevventDefault()
+        evt.preventDefault()
         submit()
     }
 
@@ -24,7 +24,7 @@ export default function FamilyForm(props) {
         <form className='form-container' onSubmit={onSubmit}>
             <div className="form-group submit">
                 <h3>Add a family member</h3>
-                <button disabled={disabled}>submit</button>
+                <button name='submitBtn' disabled={disabled}>submit</button>
                 <div className='errors'>
                     <div>{errors.username}</div>
                     <div>{errors.email}</div>

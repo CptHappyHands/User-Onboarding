@@ -13,6 +13,13 @@ const schema = yup.object().shape({
         .string()
         .min(6)
         .max(16),
+    // confirmPassword: yup
+    //     .string()
+    //     .required(),
+    //     // .when("password", {
+    //     //     is: password => (password && password.length > 0 ? true : false),
+    //     //     then: yup.string().oneOf([yup.ref("password")], "Password doesn't match")
+    //     // }),
     termsOfService: yup    
         .boolean()
         .required('The terms must be accepted')

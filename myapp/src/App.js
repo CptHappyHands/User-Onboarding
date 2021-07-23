@@ -32,8 +32,9 @@ export default function App() {
 
 const getFamily = () => {
   axios.get('https://reqres.in/api/users')
+  
   .then(res => {
-    setFamily(res.data)
+    setFamily(res.data.data)
   })
   .catch(err => {
     console.log(err)
@@ -43,12 +44,13 @@ const getFamily = () => {
 const postNewFamily = newFamily => {
   axios.post('https://reqres.in/api/users', newFamily)
   .then(res => {
-    setFamily([res.data, ...family])
+    setFamily([...family, newFamily])
   })
   .catch(err => {
     console.log(err)
   })
   .finally(() => {
+    console.log("THIS GOT RAN")
     setFormValues(initialFormValues)
   })
 }
@@ -66,7 +68,7 @@ const validate = (name, value ) => {
     })
   }
 
-  const formSubmit = () => {
+  const formSubmit = (e) => {
     const newFamily = {
       username: formValues.username,
       email: formValues.email,
@@ -94,13 +96,14 @@ const validate = (name, value ) => {
         disabled={disabled}
         errors={formErrors}
         />
-        {/* {
-          family.map(fam => {
+        {
+          family.map((fam, index) => {
+            console.log(fam);
             return (
-              <Familys key={fam.id} details={fam} />
+              <Familys key={index} details={fam} />
             )
           })
-        } */}
+        }
 
     </div>
   )
