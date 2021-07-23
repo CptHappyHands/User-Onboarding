@@ -52,8 +52,25 @@ describe('Family App', () => {
             .should('have.value', 'true')
         })
 
-        it('')
+        it('can user submit form data', () => {
+            usernameInput().type("acummings")
+            emailInput().type('helloworld@gmail.com')
+            passwordInput().type('hahahahaha')
+            termsOfServiceInput().click()
+            submitBtnInput().click()
+            usernameInput().should('have.value', '')
+            emailInput().should('have.value', '')
+            passwordInput().should('have.value', '')
+            termsOfServiceInput().should('have.value', 'true')
+        })
 
+        it('can form submit if an input is left empty', () => {
+            usernameInput().should('be.empty')
+            emailInput().should('be.empty')
+            passwordInput().should('be.empty')
+            termsOfServiceInput().should('have.value', 'true')
+            submitBtnInput().should('be.disabled')
+        })
         
       
     })
